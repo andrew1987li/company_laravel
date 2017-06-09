@@ -7,6 +7,8 @@ jQuery(function($) {'use strict',
 		});
 	});
 
+	var m_id = $("input[name=pgid]").val();
+	$('#'+m_id).addClass("active");
 
 	// accordian
 	$('.accordion-toggle').on('click', function(){

@@ -12,5 +12,17 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('pages.index');
 });
+
+Route::get('/blog', function () {
+    return view('blog.index');
+});
+
+Route::get('/blog/{pages}', 'BlogController@show');
+
+
+Route::get('/pages/{pages}', function ($pages) {
+    return view('pages.'.$pages);
+});
+
