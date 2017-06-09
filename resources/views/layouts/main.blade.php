@@ -8,6 +8,9 @@
 
 		<title>@yield('title')</title>
 
+		<style>
+			ul{list-style: none;} ul li{list-style: none;}
+		</style>
 	    <link rel="shortcut icon" href="/assets/images/ico/favicon.ico">
 	        
 	    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
