@@ -1,8 +1,7 @@
 	<!-- core CSS -->
-
+    <link href="/assets/css/main.css" rel="stylesheet">
     <link href="/assets/css/animate.min.css" rel="stylesheet">
     <link href="/assets/css/prettyPhoto.css" rel="stylesheet">
-    <link href="/assets/css/main.css" rel="stylesheet">
     <link href="/assets/css/responsive.css" rel="stylesheet">
     <link href="/assets/css/navbar.css" rel="stylesheet">    
     <!--[if lt IE 9]>
