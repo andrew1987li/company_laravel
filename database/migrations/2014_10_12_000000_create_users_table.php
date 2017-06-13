@@ -20,6 +20,8 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+            $table->tinyInteger('isconfirmed')->default(0);
+            $table->string('checkstamp')->nullable();
         });
     }
 

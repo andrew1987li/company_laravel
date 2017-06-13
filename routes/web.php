@@ -26,3 +26,8 @@ Route::get('/pages/{pages}', function ($pages) {
     return view('pages.'.$pages);
 });
 
+
+Auth::routes();
+
+Route::get('/users', 'AuthController@index')->name('users');
+

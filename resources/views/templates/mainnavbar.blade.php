@@ -34,7 +34,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html"><img src="/assets/images/logo.png" alt="logo"></a>
+                    <a class="navbar-brand" href="/"><img src="/assets/images/logo.png" alt="logo"></a>
                 </div>
                 
                 <div class="collapse navbar-collapse navbar-right">
@@ -56,6 +56,7 @@
                                 <li><a href="shortcodes.html">Shortcodes</a></li>
                             </ul>
                         </li>
+                        @if (Auth::guest())
                         <li class="dropdown">
                               <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Account <span class="caret"></span></a>
                                 <ul id="login-dp" class="dropdown-menu">
@@ -89,12 +90,29 @@
                                                      </form>
                                                 </div>
                                                 <div class="bottom text-center">
-                                                    New here ? <a href="#"><b>Join Us</b></a>
+                                                    New here ? <a href="/register"><b>Join Us</b></a>
                                                 </div>
                                          </div>
                                     </li>
                                 </ul>
-                        </li>                     
+                        </li>   
+                        @else
+                        <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown"> {{ Auth::user()->name }}  <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                            Logout
+                                    </a>
+                                </li>
+                            </ul>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                {{ csrf_field() }}
+                            </form>                            
+                        </li>     
+                        @endif                                         
                     </ul>
                 </div>
             </div><!--/.container-->
