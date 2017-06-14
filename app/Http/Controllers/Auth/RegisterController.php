@@ -62,17 +62,6 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        sendEmail($data);
-
-
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
-        ]);
-    }
-
-    public function sendEmail(array $data){
         $to = $data['email']; // note the comma
 
         // Subject
@@ -113,5 +102,13 @@ class RegisterController extends Controller
 
         // Mail it
         mail($to, $subject, $message, implode("\r\n", $headers));
+
+
+        return User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => bcrypt($data['password']),
+        ]);
     }
+
 }
