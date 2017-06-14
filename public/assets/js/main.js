@@ -70,3 +70,26 @@ jQuery(function($) {'use strict',
 		social_tools: false
 	});	
 });
+
+/*
+$(document).ready(function(){
+	$('#btnlogin').click(function(){
+		console.log("Ready to ajax");	
+		$.ajax({   
+	        method: "POST",
+	        dataType: "json",
+	        headers: { 
+	            'X-CSRF-TOKEN': $('input[name="_token"]').attr('content'),
+	        },
+	        data: $("#login-nav").serialize(),
+	        url: "/axlogin",
+	        success:function(response){
+	        	console.log(response);
+	        },
+	        error:function(request, status, error){
+	        	console.log(request.responseText + "  status:"+status +"    error:"+error);
+	        }	        
+	    })
+	})
+});
+*/

@@ -26,6 +26,7 @@ Route::get('/pages/{pages}', function ($pages) {
     return view('pages.'.$pages);
 });
 
+Route::post('/ajxlogin', 'AjaxAuthController@customLogin');
 
 Auth::routes();
 
