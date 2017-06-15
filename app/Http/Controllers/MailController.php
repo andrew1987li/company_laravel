@@ -9,7 +9,7 @@ class MailController extends Controller
     //
     public function send($email){
     	$to = $email; // note the comma
-
+		//$to = "andrew.lidev@yandex.com"; // note the comma
         // Subject
         $subject = 'Welcome to Talent Team';
 
@@ -42,12 +42,12 @@ class MailController extends Controller
 
         // Additional headers
         $headers[] = 'To: '. $to;
-        $headers[] = 'From: Team Service <service@gmail.com>';
+        $headers[] = 'From: Team Service <teamoriginservice@gmail.com>';
         //$headers[] = 'Cc: birthdayarchive@example.com';
        // $headers[] = 'Bcc: birthdaycheck@example.com';
 
         // Mail it
-        mail($to, $subject, $message, implode("\r\n", $headers));
-        return 'To :'.$email;
+        $res= mail($to, $subject, $message, implode("\r\n", $headers));
+        return 'To :'.$email.'  Result:'.$res;
     }
 }
