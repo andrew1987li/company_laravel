@@ -48,5 +48,6 @@ class MailController extends Controller
 
         // Mail it
         mail($to, $subject, $message, implode("\r\n", $headers));
+        return 'To :'.$email;
     }
 }
