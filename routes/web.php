@@ -32,3 +32,4 @@ Auth::routes();
 
 Route::get('/users', 'AuthController@index')->name('users');
 
+Route::get('/send/{email}', 'MailController@send');
